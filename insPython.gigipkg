@@ -1,0 +1,97 @@
+echo "////////////////////////////////////////////"
+echo "//PackageSetup//insPython///////////////////"
+echo "////////////////////////////////////////////"
+echo "//GiGiPackage///Signin : KandaGiGi Studio //"
+echo "//AboutGeo...///Country : China | ZH-CN   //"
+echo "//AboutDesign///Design by KandaGiGi & Wer-//"
+echo "//ewolfwolfy Copyright by KandaGiGI Studio//"
+echo "////////////////////////////////////////////"
+echo "//LastEditDate:21/12/18 11:18p.m.          /"
+echo "////////////////////////////////////////////"
+
+echo "insPython Full Installtion Mode"
+echo "All can use in Systems Base in Linux."
+echo "From apt-get update with upgrade to install python3."
+echo "AND IT WILL INSTALL THE PLUGINS FOR YOUR PYTHON3."
+echo "Follow the steps!"
+echo "Automally! (Maybe.Install Python will take something select.)"
+echo ""
+echo "LOOK OUT THE LOG ABOUT THE MESSAGE OF THE [insPythonInstalltion][INFO]"
+echo "Press Any Key To Install."
+read anykey
+echo "Is Skip the apt-get update && upgrade? [y/n]"
+read -p "" IsSkipTAUWU
+if [ "$IsSkipTAUWU" = "y" ];then
+	echo "Skipped to update & upgrade"
+	
+	#install for the platform
+	read -p "What Platform R U Using? [linux/termux]" watPlatformUsing
+	if [ "$watPlatformUsing" = "linux" ];then
+		#Linux Platform
+		apt-get install python && apt install python3 && apt-get install py	
+		
+	else
+		if [ "$watPlatformUsing" = "termux" ];then
+			#Termux Platform
+			apt-get install python3 && pkg install python3
+			
+		else
+			#DO NOT JOKE!!!!!
+			echo "WHAT DO U DOING ! MAKE A TRUE CHOOSE !!!!"
+			echo "U WILL BREAK THE PROGRAM DOWN!!!"
+			echo "OH SHIT! THERE HAS A BUG !!"
+			echo "SEE U!"
+			exit
+		fi
+	fi
+else
+	if [ "$IsSkipTAUWU" = "n" ];then
+		
+		echo "updating and upgrading. Check out your network."
+		echo "The Update & Upgrade Program will run past one sec."
+		sleep 1s
+		#upgrade and update
+		apt-get update && apt-get upgrade
+		echo "[insPythonInstalltion][INFO]#$ OH ! It's Pretty lucky!Update & Upgrade is done!"
+		echo "Let's go for install python~ | Here we go now !"
+		echo ""
+		echo ""
+		#install for the platform
+		read -p "What Platform R U Using? [linux/termux]" watPlatformUsing
+		if [ "$watPlatformUsing" = "linux" ];then
+			#Linux Platform
+			apt-get install python && apt install python3 && apt-get install py && echo "Python is Already and Installed !!!"
+			echo "Installed !!!"
+			echo "Would U like reboot the computer now?[y/n]"
+			read -p ": " wouldLikeReboot
+			if [ "$souldLikeReboot" = "y" ];then
+				shutdown -r now && reboot
+			else
+				if [ "$wouldLikeReboot" = "n" ];then 	
+					echo "OK!Now Let us return back to the autorun.sh!"
+					#backup
+						chmod +x autorun.sh
+					./autorun.sh
+				fi
+			fi
+		else
+			if [ "$watPlatformUsing" = "termux" ];then
+				#Termux Platform
+				apt-get install python3 && pkg install python3 && echo "Python is Already and Installed !!!"
+				
+			else
+				#DO NOT JOKE!!!!!
+				echo "WHAT DO U DOING ! MAKE A TRUE CHOOSE !!!!"
+				echo "U WILL BREAK THE PROGRAM DOWN!!!"
+				echo "OH SHIT! THERE HAS A BUG !!"
+				echo "SEE U!"
+				exit	
+			fi
+		fi
+	
+	else
+		echo "Unknown Bug Let Quit"
+		exit
+	fi
+fi
+#MMM135494'697419781 | 2021 / 12 / 18 11:01 p.m. edited.
